@@ -1,0 +1,2701 @@
+<html>
+
+<head>
+<title>问卷调查/评分系统</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--导入js库-->
+<link href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+<link href="/static/star-rating.min.css" rel="stylesheet">
+<script src="http://apps.bdimg.com/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="/static/star-rating.min.js"></script>
+</head>
+
+<body>
+
+
+
+<nav class="navbar navbar-default" role="navigation" >
+	<div class="container-fluid" style="float:none;text-align:center;"> 
+    <div class="navbar-header" ">
+       <a class="navbar-brand" style="font-size:20px" href="#">问卷调查</a>
+		
+    </div>
+    
+
+</nav>
+
+
+
+<div class="navbar-collapse collapse" style="text-align: center;">
+    <ul class="nav navbar-nav" style="display: inline-block;float: none;">
+        <li class="">
+            <a href="#" style="font-size:25px">【碎片化产品】产品线各成员综合素质打分及意愿度调查</a>
+        </li>
+    
+    </ul>
+</div>
+
+
+
+<div class="row" style="margin-top:20px">
+<div class="col-sm-4"></div>
+<div class=" col-sm-8" style="font-size:15px">针对本产品线各成员打分（实名提交，匿名计算，不暴露评价人）</div>
+</div>
+
+
+
+<div class="row" style="margin-top:20px">
+<div class="col-sm-4"></div>
+<div class=" col-sm-8" style="font-size:15px">组长及负责人申请、换组申请，综合考虑后进行调整，手机填写。(不需要自评)</div>
+</div>
+
+
+
+
+<div style="margin-top:20px" ></div>
+
+
+
+<div style="text-align:center;color:gray">.....................................................................................................................................................................</div>
+
+
+<!--#############第一页的显示在这#############-->
+
+<div class="row" >
+	<div class="col-sm-4" ></div>
+
+<div class="form-group col-sm-8 " >
+<span class="badge">!</span><a  id="zong_biaoti" style="color:gray;font-size:15px">产品经理调查页</a>
+</div>
+</div>
+
+
+
+
+  
+<div class="row" id="one_page_select">
+	<div class="col-sm-4" ></div>
+	<div class="form-group col-sm-8">
+		<select class="form-control" style = "width:300px;" id="init_select" onchange="init_select()">
+			<option value="0">产品线</option>
+			<option value="学生家长">学生家长</option>
+			<option value="外教管理">外教管理</option>
+			<option value="班主任">班主任</option>
+			<option value="课程顾问">课程顾问</option>
+			<option value="基础业务">基础业务</option>
+			<option value="碎片化增长">碎片化增长</option>
+		</select>
+	</div>
+</div>
+
+
+
+
+<div class="row" id="one_page_input" >
+    <div class="col-sm-4" ></div>
+	<div class="col-sm-8">产品经理：</div>
+	<div class="col-sm-4" ></div>
+	<div class="form-group col-sm-8">
+		<input  id="page_one_cpjl"  type="text" class="form-control" style = "width:300px;" >
+	</div>
+</div>
+
+
+
+
+<div class="row" id = "one_page_start_one">
+<div class="col-sm-4">
+</div>
+<div class="col-sm-8">
+<i></i><br/>
+    <strong>此产品经理综合</strong>
+<input id="input_page_one_one" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+<div class="col-sm-4" id = "one_page_start_two">
+</div>
+<div class="col-sm-8" style="">
+<i></i><br/>
+<strong>此产品经理专业</strong>
+<input id="input_page_one_two" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+
+<div class="col-sm-4" id = "one_page_start_three">
+</div>
+<div class="col-sm-8" style="">
+<i></i><br/>
+<strong>此产品经理效率 </strong>
+<input id="input_page_one_three" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+
+<div class="col-sm-4" id = "one_page_start_four">
+</div>
+<div class="col-sm-8" style="">
+<i></i><br/>
+<strong>此产品经理团队精神 </strong>
+<input id="input_page_one_four" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+{#<div class="col-sm-4" id = "one_page_start_five">#}
+{#</div>#}
+{#<div class="col-sm-8" style="">#}
+{#<i></i><br/>#}
+{#<strong>此产品经理综合 </strong>#}
+{#<input id="input_page_one_five" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >#}
+{#</div>#}
+
+
+</div>
+
+<div class="row" id="one_page_word" style="margin-top:10px">
+<div class="col-sm-4"></div>
+<div class="col-sm-4">有其它话想说 :</div>
+<div class="col-sm-4"></div>
+
+</div>
+
+<div class="row" id="one_page_textarea">
+<div class="col-sm-4"></div>
+<div class="col-sm-4">
+<textarea class="form-control" rows="5"   name="content" id="one_page_text"></textarea></div>
+<div class="col-sm-4"></div>
+ </div>
+ 
+<div class="row" id="one_page_next" style="margin-top:10px">
+<div class="col-sm-7"></div>
+<div class="col-sm-5"><button  id="next_page_one"  class="btn btn-success ">下一页</button></div>
+</div>
+ 
+ 
+
+
+
+
+<!--#############第一页的显示在这#############↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑-->
+
+
+
+
+
+
+
+<!--#############第二页的显示在这#############-->
+
+
+
+
+
+  
+
+
+
+<div class="row" id="two_page_input" style="display:none" >
+    <div class="col-sm-4" ></div>
+	<div class="col-sm-8">产品经理：</div>
+	<div class="col-sm-4" ></div>
+	<div class="form-group col-sm-8">
+		<input  id="page_two_cpjl"  type="text" class="form-control" style = "width:300px;" >
+	</div>
+</div>
+
+
+
+
+<div class="row" id = "two_page_start_one" style="display:none" >
+<div class="col-sm-4">
+</div>
+<div class="col-sm-8">
+<i></i><br/>
+    <strong>此产品经理综合</strong>
+<input id="input_page_two_one" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+<div class="col-sm-4" id = "one_page_start_two">
+</div>
+<div class="col-sm-8" style="">
+<i></i><br/>
+<strong>此产品经理专业</strong>
+<input id="input_page_two_two" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+
+<div class="col-sm-4" id = "one_page_start_three">
+</div>
+<div class="col-sm-8" style="">
+<i></i><br/>
+<strong>此产品经理效率 </strong>
+<input id="input_page_two_three" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+
+<div class="col-sm-4" id = "one_page_start_four">
+</div>
+<div class="col-sm-8" style="">
+<i></i><br/>
+<strong>此产品经理团队精神 </strong>
+<input id="input_page_two_four" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+{#<div class="col-sm-4" id = "one_page_start_five">#}
+{#</div>#}
+{#<div class="col-sm-8" style="">#}
+{#<i></i><br/>#}
+{#<strong>此产品经理综合 </strong>#}
+{#<input id="input_page_two_five" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >#}
+{#</div>#}
+</div>
+
+<div class="row" id="two_page_word" style="margin-top:10px;display:none" >
+<div class="col-sm-4"></div>
+<div class="col-sm-4">有其它话想说 :</div>
+<div class="col-sm-4"></div>
+
+</div>
+
+<div class="row" id="two_page_textarea" style="display:none" >
+<div class="col-sm-4"></div>
+<div class="col-sm-4">
+<textarea class="form-control" rows="5"   name="content" id="two_page_text"></textarea></div>
+<div class="col-sm-4"></div>
+ </div>
+ 
+<div class="row" id="two_page_next" style="margin-top:10px;display:none" >
+<div class="col-sm-4"></div>
+<div class="col-sm-3"><button  id="next_page_two_s"  class="btn btn-success ">上一页</button></div>
+<div class="col-sm-5"><button  id="next_page_two"  class="btn btn-success ">下一页</button></div>
+</div>
+ 
+
+
+<!--#############第二页的显示在这#############↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--#############第三页#####################-->
+
+<div class="row" id="three_page_input" style="display:none" >
+    <div class="col-sm-4" ></div>
+	<div class="col-sm-8">前端组长/产品线负责人</div>
+	<div class="col-sm-4" ></div>
+	<div class="form-group col-sm-8">
+		<input  id="page_three_cpjl"  type="text" class="form-control" style = "width:300px;" >
+	</div>
+</div>
+
+
+
+<div class="row" id = "three_page_start_one" style="display:none">
+<div class="col-sm-4">
+</div>
+<div class="col-sm-8">
+<i></i><br/>
+    <strong>上面同学综合 </strong>
+<input id="input_page_three_one" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+<div class="col-sm-4" id = "one_page_start_two">
+</div>
+<div class="col-sm-8" style="">
+<i></i><br/>
+<strong>上面同学项目管理能力 </strong>
+<input id="input_page_three_two" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+
+<div class="col-sm-4" id = "one_page_start_three">
+</div>
+<div class="col-sm-8" style="">
+<i></i><br/>
+<strong>上面同学专业性  </strong>
+<input id="input_page_three_three" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+
+<div class="col-sm-4" id = "one_page_start_four">
+</div>
+<div class="col-sm-8" style="">
+<i></i><br/>
+<strong>上面同学效率  </strong>
+<input id="input_page_three_four" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+<div class="col-sm-4" id = "one_page_start_five">
+</div>
+<div class="col-sm-8" style="">
+<i></i><br/>
+<strong>上面同学团队精神  </strong>
+<input id="input_page_three_five" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+</div>
+
+<div class="row" id="three_page_word" style="margin-top:10px;display:none">
+<div class="col-sm-4"></div>
+<div class="col-sm-4">我有话对他/她说  :</div>
+<div class="col-sm-4"></div>
+
+</div>
+
+<div class="row" id="three_page_textarea" style="display:none">
+<div class="col-sm-4"></div>
+<div class="col-sm-4">
+<textarea class="form-control" rows="5"   name="content" id="three_page_text"></textarea></div>
+<div class="col-sm-4"></div>
+ </div>
+ 
+<div class="row" id="three_page_next" style="margin-top:10px;display:none">
+<div class="col-sm-4"></div>
+<div class="col-sm-3"><button  id="next_page_three_s"  class="btn btn-success ">上一页</button></div>
+<div class="col-sm-5"><button  id="next_page_three"  class="btn btn-success ">下一页</button></div>
+</div>
+ 
+ 
+ 
+ 
+ 
+<!--#############第三页###################-->
+
+
+
+
+
+
+<!--#############第四页###################-->
+
+
+  
+
+<!--第一个-->
+
+<div class="row" id="four_page_input_one"  style="display:none" >
+    <div class="col-sm-4" ></div>
+	<div class="col-sm-8">1.前端工程师 ↓:</div>
+	<div class="col-sm-4" ></div>
+	<div class="form-group col-sm-8">
+		<input  id="page_four_one_cpjl"  type="text" class="form-control" style = "width:300px;" >
+	</div>
+</div>
+
+
+
+
+<div class="row" id = "four_page_start_one" style="display:none">
+<div class="col-sm-4">
+</div>
+<div class="col-sm-8">
+<i></i><br/>
+    <strong>上面同学综合 </strong>
+<input id="input_page_four_one_one" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+<div class="col-sm-4" id = "one_page_start_two">
+</div>
+<div class="col-sm-8" style="">
+<i></i><br/>
+<strong>上面同学专业性 </strong>
+<input id="input_page_four_one_two" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+
+<div class="col-sm-4" id = "one_page_start_three">
+</div>
+<div class="col-sm-8" style="">
+<i></i><br/>
+<strong>上面同学效率  </strong>
+<input id="input_page_four_one_three" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+
+<div class="col-sm-4" id = "one_page_start_four">
+</div>
+<div class="col-sm-8" style="">
+<i></i><br/>
+<strong>上面同学团队精神  </strong>
+<input id="input_page_four_one_four" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+
+</div>
+
+
+
+
+
+<!--第二个-->
+<div class="row" id="four_page_input_two" style="margin-top:20px;display:none" >
+    <div class="col-sm-4" ></div>
+	<div class="col-sm-8">2.前端工程师 ↓:</div>
+	<div class="col-sm-4" ></div>
+	<div class="form-group col-sm-8">
+		<input  id="page_four_two_cpjl"  type="text" class="form-control" style = "width:300px;" >
+	</div>
+</div>
+
+
+
+
+<div class="row" id = "four_page_start_two" style="display:none" >
+<div class="col-sm-4">
+</div>
+<div class="col-sm-8">
+<i></i><br/>
+    <strong>上面同学综合 </strong>
+<input id="input_page_four_two_one" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+<div class="col-sm-4" id = "one_page_start_two">
+</div>
+<div class="col-sm-8" style="">
+<i></i><br/>
+<strong>上面同学专业性 </strong>
+<input id="input_page_four_two_two" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+
+<div class="col-sm-4" id = "one_page_start_three">
+</div>
+<div class="col-sm-8" style="">
+<i></i><br/>
+<strong>上面同学效率  </strong>
+<input id="input_page_four_two_three" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+
+<div class="col-sm-4" id = "one_page_start_four">
+</div>
+<div class="col-sm-8" style="">
+<i></i><br/>
+<strong>上面同学团队精神  </strong>
+<input id="input_page_four_two_four" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+
+</div>
+
+
+
+<!--第三个-->
+
+
+<div class="row" id="four_page_input_three" style="margin-top:20px;display:none" >
+    <div class="col-sm-4" ></div>
+	<div class="col-sm-8">3.前端工程师 ↓:</div>
+	<div class="col-sm-4" ></div>
+	<div class="form-group col-sm-8">
+		<input  id="page_four_three_cpjl"  type="text" class="form-control" style = "width:300px;" >
+	</div>
+</div>
+
+
+
+
+<div class="row" id = "four_page_start_three" style="display:none">
+<div class="col-sm-4">
+</div>
+<div class="col-sm-8">
+<i></i><br/>
+    <strong>上面同学综合 </strong>
+<input id="input_page_four_three_one" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+<div class="col-sm-4" id = "one_page_start_two" >
+</div>
+<div class="col-sm-8" style="">
+<i></i><br/>
+<strong>上面同学专业性 </strong>
+<input id="input_page_four_three_two" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+
+<div class="col-sm-4" id = "one_page_start_three">
+</div>
+<div class="col-sm-8" style="">
+<i></i><br/>
+<strong>上面同学效率  </strong>
+<input id="input_page_four_three_three" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+
+<div class="col-sm-4" id = "one_page_start_four">
+</div>
+<div class="col-sm-8" style="">
+<i></i><br/>
+<strong>上面同学团队精神  </strong>
+<input id="input_page_four_three_four" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+
+</div>
+
+
+
+<!--第四个-->
+
+<div class="row" id="four_page_input_four" style="margin-top:20px;display:none" >
+    <div class="col-sm-4" ></div>
+	<div class="col-sm-8">4.前端工程师 ↓:</div>
+	<div class="col-sm-4" ></div>
+	<div class="form-group col-sm-8">
+		<input  id="page_four_four_cpjl"  type="text" class="form-control" style = "width:300px;" >
+	</div>
+</div>
+
+
+
+
+<div class="row" id = "four_page_start_four" style="display:none">
+<div class="col-sm-4">
+</div>
+<div class="col-sm-8">
+<i></i><br/>
+    <strong>上面同学综合 </strong>
+<input id="input_page_four_four_one" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+<div class="col-sm-4" id = "one_page_start_two">
+</div>
+<div class="col-sm-8" style="">
+<i></i><br/>
+<strong>上面同学专业性 </strong>
+<input id="input_page_four_four_two" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+
+<div class="col-sm-4" id = "one_page_start_three">
+</div>
+<div class="col-sm-8" style="">
+<i></i><br/>
+<strong>上面同学效率  </strong>
+<input id="input_page_four_four_three" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+
+<div class="col-sm-4" id = "one_page_start_four">
+</div>
+<div class="col-sm-8" style="">
+<i></i><br/>
+<strong>上面同学团队精神  </strong>
+<input id="input_page_four_four_four" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+
+</div>
+
+
+ 
+<div class="row" id="four_page_next" style="margin-top:10px;display:none" style="margin-top:20px">
+<div class="col-sm-4"></div>
+<div class="col-sm-3"><button  id="next_page_four_s"  class="btn btn-success ">上一页</button> </div>
+<div class="col-sm-5"><button  id="next_page_four"  class="btn btn-success ">下一页</button> </div>
+</div>
+ 
+ 
+ 
+ <!--###############  第四页#########################-->
+ 
+ 
+ 
+ 
+ <!--###############  第五页#########################-->
+
+
+
+<div class="row" id="five_page_input" style="display:none">
+    <div class="col-sm-4" ></div>
+	<div class="col-sm-8">Java组长/产品线负责人：</div>
+	<div class="col-sm-4" ></div>
+	<div class="form-group col-sm-8">
+		<input  id="page_five_cpjl"  type="text" class="form-control" style = "width:300px;" >
+	</div>
+</div>
+
+
+
+
+<div class="row" id = "five_page_start_one" style="display:none">
+<div class="col-sm-4">
+</div>
+<div class="col-sm-8">
+<i></i><br/>
+    <strong>上面同学综合 </strong>
+<input id="input_page_five_one" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+<div class="col-sm-4" id = "one_page_start_two">
+</div>
+<div class="col-sm-8" style="">
+<i></i><br/>
+<strong>上面同学项目管理能力 </strong>
+<input id="input_page_five_two" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+
+<div class="col-sm-4" id = "one_page_start_three" >
+</div>
+<div class="col-sm-8" style="">
+<i></i><br/>
+<strong>上面同学专业性  </strong>
+<input id="input_page_five_three" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+
+<div class="col-sm-4" id = "one_page_start_four">
+</div>
+<div class="col-sm-8" style="">
+<i></i><br/>
+<strong>上面同学效率  </strong>
+<input id="input_page_five_four" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+<div class="col-sm-4" id = "one_page_start_five">
+</div>
+<div class="col-sm-8" style="">
+<i></i><br/>
+<strong>上面同学团队精神  </strong>
+<input id="input_page_five_five" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+</div>
+
+<div class="row" id="five_page_word" style="margin-top:10px;display:none" >
+<div class="col-sm-4"></div>
+<div class="col-sm-4">我有话对他/她说 :</div>
+<div class="col-sm-4"></div>
+
+</div>
+
+<div class="row" id="five_page_textarea" style="display:none" >
+<div class="col-sm-4"></div>
+<div class="col-sm-4">
+<textarea class="form-control" rows="5"   name="content" id="five_page_text"></textarea></div>
+<div class="col-sm-4"></div>
+ </div>
+ 
+<div class="row" id="five_page_next" style="margin-top:10px;display:none" >
+<div class="col-sm-4"></div>
+<div class="col-sm-3"><button  id="next_page_five_s"  class="btn btn-success ">上一页</button></div>
+<div class="col-sm-5"><button  id="next_page_five"  class="btn btn-success ">下一页</button></div>
+</div>
+ 
+
+ <!--###############  第五页#########################-->
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <!--###############  第六页#########################-->
+ <!--第一个java-->
+
+<div class="row" id="six_page_input_one"  style="display:none" >
+    <div class="col-sm-4" ></div>
+	<div class="col-sm-8">1.Java工程师 ↓:</div>
+	<div class="col-sm-4" ></div>
+	<div class="form-group col-sm-8">
+		<input  id="page_six_one_cpjl"  type="text" class="form-control" style = "width:300px;" >
+	</div>
+</div>
+
+
+
+
+<div class="row" id = "six_page_start_one" style="display:none">
+<div class="col-sm-4">
+</div>
+<div class="col-sm-8">
+<i></i><br/>
+    <strong>上面同学综合 </strong>
+<input id="input_page_six_one_one" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+<div class="col-sm-4" id = "one_page_start_two">
+</div>
+<div class="col-sm-8" style="">
+<i></i><br/>
+<strong>上面同学专业性 </strong>
+<input id="input_page_six_one_two" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+
+<div class="col-sm-4" id = "one_page_start_three">
+</div>
+<div class="col-sm-8" style="">
+<i></i><br/>
+<strong>上面同学效率  </strong>
+<input id="input_page_six_one_three" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+
+<div class="col-sm-4" id = "one_page_start_four">
+</div>
+<div class="col-sm-8" style="">
+<i></i><br/>
+<strong>上面同学团队精神  </strong>
+<input id="input_page_six_one_four" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+
+</div>
+
+
+
+
+
+<!--第二个java-->
+<div class="row" id="six_page_input_two" style="margin-top:20px;display:none" >
+    <div class="col-sm-4" ></div>
+	<div class="col-sm-8">2.Java工程师 ↓:</div>
+	<div class="col-sm-4" ></div>
+	<div class="form-group col-sm-8">
+		<input  id="page_six_two_cpjl"  type="text" class="form-control" style = "width:300px;" >
+	</div>
+</div>
+
+
+
+
+<div class="row" id = "six_page_start_two" style="display:none" >
+<div class="col-sm-4">
+</div>
+<div class="col-sm-8">
+<i></i><br/>
+    <strong>上面同学综合 </strong>
+<input id="input_page_six_two_one" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+<div class="col-sm-4" id = "one_page_start_two">
+</div>
+<div class="col-sm-8" style="">
+<i></i><br/>
+<strong>上面同学专业性 </strong>
+<input id="input_page_six_two_two" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+
+<div class="col-sm-4" id = "one_page_start_three">
+</div>
+<div class="col-sm-8" style="">
+<i></i><br/>
+<strong>上面同学效率  </strong>
+<input id="input_page_six_two_three" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+
+<div class="col-sm-4" id = "one_page_start_four">
+</div>
+<div class="col-sm-8" style="">
+<i></i><br/>
+<strong>上面同学团队精神  </strong>
+<input id="input_page_six_two_four" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+
+</div>
+
+
+
+<!--第三个java-->
+
+
+<div class="row" id="six_page_input_three" style="margin-top:20px;display:none" >
+    <div class="col-sm-4" ></div>
+	<div class="col-sm-8">3.Java工程师 ↓:</div>
+	<div class="col-sm-4" ></div>
+	<div class="form-group col-sm-8">
+		<input  id="page_six_three_cpjl"  type="text" class="form-control" style = "width:300px;" >
+	</div>
+</div>
+
+
+
+
+<div class="row" id = "six_page_start_three" style="display:none">
+<div class="col-sm-4">
+</div>
+<div class="col-sm-8">
+<i></i><br/>
+    <strong>上面同学综合 </strong>
+<input id="input_page_six_three_one" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+<div class="col-sm-4" id = "one_page_start_two" >
+</div>
+<div class="col-sm-8" style="">
+<i></i><br/>
+<strong>上面同学专业性 </strong>
+<input id="input_page_six_three_two" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+
+<div class="col-sm-4" id = "one_page_start_three">
+</div>
+<div class="col-sm-8" style="">
+<i></i><br/>
+<strong>上面同学效率  </strong>
+<input id="input_page_six_three_three" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+
+<div class="col-sm-4" id = "one_page_start_four">
+</div>
+<div class="col-sm-8" style="">
+<i></i><br/>
+<strong>上面同学团队精神  </strong>
+<input id="input_page_six_three_four" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+
+</div>
+
+
+
+
+ 
+<div class="row" id="six_page_next" style="margin-top:10px;display:none">
+<div class="col-sm-4"></div>
+<div class="col-sm-3"><button  id="next_page_six_s"  class="btn btn-success ">上一页</button></div>
+<div class="col-sm-5"><button  id="next_page_six"  class="btn btn-success ">下一页</button></div>
+</div>
+ 
+ 
+ 
+ <!--###############  第六页#########################-->
+ 
+ 
+ 
+ 
+ <!--###############  第七页#########################-->
+ 
+
+
+
+
+<div class="row" id="seven_page_input" style="display:none">
+    <div class="col-sm-4" ></div>
+	<div class="col-sm-8">测试组组长/产品线负责人：</div>
+	<div class="col-sm-4" ></div>
+	<div class="form-group col-sm-8">
+		<input  id="page_seven_cpjl"  type="text" class="form-control" style = "width:300px;" >
+	</div>
+</div>
+
+
+
+
+<div class="row" id = "seven_page_start_one" style="display:none">
+<div class="col-sm-4">
+</div>
+<div class="col-sm-8">
+<i></i><br/>
+    <strong>上面同学综合 </strong>
+<input id="input_page_seven_one" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+<div class="col-sm-4" id = "one_page_start_two">
+</div>
+<div class="col-sm-8" style="">
+<i></i><br/>
+<strong>上面同学项目管理能力 </strong>
+<input id="input_page_seven_two" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+
+<div class="col-sm-4" id = "one_page_start_three">
+</div>
+<div class="col-sm-8" style="">
+<i></i><br/>
+<strong>上面同学专业性  </strong>
+<input id="input_page_seven_three" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+
+<div class="col-sm-4" id = "one_page_start_four">
+</div>
+<div class="col-sm-8" style="">
+<i></i><br/>
+<strong>上面同学效率  </strong>
+<input id="input_page_seven_four" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+<div class="col-sm-4" id = "one_page_start_five">
+</div>
+<div class="col-sm-8" style="">
+<i></i><br/>
+<strong>上面同学团队精神  </strong>
+<input id="input_page_seven_five" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+</div>
+
+<div class="row" id="seven_page_word" style="margin-top:10px;display:none">
+<div class="col-sm-4"></div>
+<div class="col-sm-4">我有话对他/她说 :</div>
+<div class="col-sm-4"></div>
+
+</div>
+
+<div class="row" id="seven_page_textarea" style="display:none" >
+<div class="col-sm-4"></div>
+<div class="col-sm-4">
+<textarea class="form-control" rows="5"   name="content" id="seven_page_text"></textarea></div>
+<div class="col-sm-4"></div>
+ </div>
+ 
+<div class="row" id="seven_page_next" style="margin-top:10px;display:none">
+<div class="col-sm-4"></div>
+<div class="col-sm-3"><button  id="next_page_seven_s"  class="btn btn-success ">上一页</button></div>
+<div class="col-sm-5"><button  id="next_page_seven"  class="btn btn-success ">下一页</button></div>
+</div>
+ 
+ 
+ <!--###############  第七页#########################-->
+ 
+ 
+ 
+ 
+ 
+  
+ <!--###############  第八页#########################-->
+ 
+ 
+ 
+  
+
+<!--第一个-->
+
+<div class="row" id="eight_page_input_one"  style="display:none" >
+    <div class="col-sm-4" ></div>
+	<div class="col-sm-8">1.测试工程师  ↓:</div>
+	<div class="col-sm-4" ></div>
+	<div class="form-group col-sm-8">
+		<input  id="page_eight_one_cpjl"  type="text" class="form-control" style = "width:300px;" >
+	</div>
+</div>
+
+
+
+
+<div class="row" id = "eight_page_start_one" style="display:none">
+<div class="col-sm-4">
+</div>
+<div class="col-sm-8">
+<i></i><br/>
+    <strong>上面同学综合 </strong>
+<input id="input_page_eight_one_one" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+<div class="col-sm-4" id = "one_page_start_two">
+</div>
+<div class="col-sm-8" style="">
+<i></i><br/>
+<strong>上面同学专业性 </strong>
+<input id="input_page_eight_one_two" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+
+<div class="col-sm-4" id = "one_page_start_three">
+</div>
+<div class="col-sm-8" style="">
+<i></i><br/>
+<strong>上面同学效率  </strong>
+<input id="input_page_eight_one_three" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+
+<div class="col-sm-4" id = "one_page_start_four">
+</div>
+<div class="col-sm-8" style="">
+<i></i><br/>
+<strong>上面同学团队精神  </strong>
+<input id="input_page_eight_one_four" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+
+</div>
+
+
+
+
+
+<!--第二个-->
+<div class="row" id="eight_page_input_two" style="margin-top:20px;display:none" >
+    <div class="col-sm-4" ></div>
+	<div class="col-sm-8">2.测试工程师  ↓:</div>
+	<div class="col-sm-4" ></div>
+	<div class="form-group col-sm-8">
+		<input  id="page_eight_two_cpjl"  type="text" class="form-control" style = "width:300px;" >
+	</div>
+</div>
+
+
+
+
+<div class="row" id = "eight_page_start_two" style="display:none" >
+<div class="col-sm-4">
+</div>
+<div class="col-sm-8">
+<i></i><br/>
+    <strong>上面同学综合 </strong>
+<input id="input_page_eight_two_one" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+<div class="col-sm-4" id = "one_page_start_two">
+</div>
+<div class="col-sm-8" style="">
+<i></i><br/>
+<strong>上面同学专业性 </strong>
+<input id="input_page_eight_two_two" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+
+<div class="col-sm-4" id = "one_page_start_three">
+</div>
+<div class="col-sm-8" style="">
+<i></i><br/>
+<strong>上面同学效率  </strong>
+<input id="input_page_eight_two_three" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+
+<div class="col-sm-4" id = "one_page_start_four">
+</div>
+<div class="col-sm-8" style="">
+<i></i><br/>
+<strong>上面同学团队精神  </strong>
+<input id="input_page_eight_two_four" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+
+</div>
+
+
+
+<!--第三个-->
+
+
+<div class="row" id="eight_page_input_three" style="margin-top:20px;display:none" >
+    <div class="col-sm-4" ></div>
+	<div class="col-sm-8">3.测试工程师  ↓:</div>
+	<div class="col-sm-4" ></div>
+	<div class="form-group col-sm-8">
+		<input  id="page_eight_three_cpjl"  type="text" class="form-control" style = "width:300px;" >
+	</div>
+</div>
+
+
+
+
+<div class="row" id = "eight_page_start_three" style="display:none">
+<div class="col-sm-4">
+</div>
+<div class="col-sm-8">
+<i></i><br/>
+    <strong>上面同学综合 </strong>
+<input id="input_page_eight_three_one" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+<div class="col-sm-4" id = "one_page_start_two" >
+</div>
+<div class="col-sm-8" style="">
+<i></i><br/>
+<strong>上面同学专业性 </strong>
+<input id="input_page_eight_three_two" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+
+<div class="col-sm-4" id = "one_page_start_three">
+</div>
+<div class="col-sm-8" style="">
+<i></i><br/>
+<strong>上面同学效率  </strong>
+<input id="input_page_eight_three_three" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+
+<div class="col-sm-4" id = "one_page_start_four">
+</div>
+<div class="col-sm-8" style="">
+<i></i><br/>
+<strong>上面同学团队精神  </strong>
+<input id="input_page_eight_three_four" type="number" class="rating" min=0 max=10 step=1 data-size="4px" >
+</div>
+
+
+</div>
+
+
+<div class="row" id="eight_page_next" style="margin-top:10px;display:none">
+<div class="col-sm-4"></div>
+<div class="col-sm-3"><button  id="next_page_eight_s"  class="btn btn-success ">上一页</button></div>
+<div class="col-sm-5"><button  id="next_page_eight"  class="btn btn-success ">下一页</button></div>
+</div>
+ 
+
+  
+ <!--###############  第八页#########################-->
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+ <!--###############  第九页 最后一页#########################-->
+ 
+ 
+ <div class="row" id="last_radio" style="display:none">
+	<div class="col-sm-4" ></div>
+	<div class="form-group col-sm-8">
+	<strong>我想留在本组：</strong> 
+		<div class="radio">
+			<label>
+				<input type="radio" name="optionswant" id="optionswant" value="非常愿意">非常愿意
+			</label>
+        </div>
+		<div class="radio">
+			<label>
+				<input type="radio" name="optionswant" id="optionswant" value="一般">一般
+			</label>
+        </div>
+		<div class="radio">
+			<label>
+				<input type="radio" name="optionswant" id="optionswant" value="我想换组">我想换组
+			</label>
+        </div>
+	</div>
+</div>
+
+
+<div class="row" id="last_select_wai" style="display:none">
+	<div class="col-sm-4" ></div>
+	<div class="form-group col-sm-8">
+	<strong style="color:red">我想去产品线 :</strong> 
+		<select class="form-control" id="last_select" style = "width:300px;">
+			<option value="no"></option>
+			<option value="学生家长">学生家长</option>
+			<option value="外交管理">外交管理</option>
+			<option value="班主任">班主任</option>
+			<option value="课程顾问">课程顾问</option>
+			<option value="基础业务">基础业务</option>
+			<option value="碎片化增长">碎片化增长</option>
+		</select>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="row" id="reason_oo" style="margin-top:10px;display:none" >
+<div class="col-sm-4"></div>
+<div class="col-sm-4">申请换组理由  :</div>
+<div class="col-sm-4"></div>
+</div>
+<div class="row" id="reason_ids" style="display:none">
+<div class="col-sm-4"></div>
+<div class="col-sm-4">
+<textarea class="form-control" rows="5"   name="content" id="chage_reasons"></textarea></div>
+<div class="col-sm-4"></div>
+ </div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="row" id="last_page_input" style="display:none" >
+    <div class="col-sm-4" ></div>
+	<div class="col-sm-8">我是谁？（不会暴露评价人信息） </div>
+	<div class="col-sm-4" ></div>
+	<div class="form-group col-sm-8">
+		<input  id="whoiam"  type="text" class="form-control" style = "width:300px;" >
+	</div>
+</div>
+
+
+
+
+
+
+<div class="row" id="last_radio_z" style="display:none" >
+	<div class="col-sm-4" ></div>
+	<div class="form-group col-sm-8">
+	<strong>我想当组长/项目负责人 </strong> 
+		<div class="radio">
+			<label>
+				<input type="radio" name="changelevel" id="changelevel" value="想试试产品线负责人">想试试产品线负责人
+			</label>
+        </div>
+		<div class="radio">
+			<label>
+				<input type="radio" name="changelevel" id="changelevel" value="想试试组长">想试试组长
+			</label>
+        </div>
+		<div class="radio">
+			<label>
+				<input type="radio" name="changelevel" id="changelevel" value="提升能力,将来再说">提升能力，将来再说
+			</label>
+        </div>
+		<div class="radio">
+			<label>
+				<input type="radio" name="changelevel" id="changelevel" value="现在挺好">现在挺好
+			</label>
+        </div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="row" id="last_page_word" style="margin-top:10px;display:none">
+<div class="col-sm-4"></div>
+<div class="col-sm-4">申请当组长和项目负责人理由   :</div>
+<div class="col-sm-4"></div>
+</div>
+<div class="row" id="last_page_textarea_dzz" style="display:none">
+<div class="col-sm-4"></div>
+<div class="col-sm-4">
+<textarea class="form-control" rows="5"   name="content" id="changelevel_reason"></textarea></div>
+<div class="col-sm-4"></div>
+</div>
+
+
+
+
+
+
+
+
+<div class="row" id="last_radio_kg" style="display:none" >
+	<div class="col-sm-4" ></div>
+	<div class="form-group col-sm-8">
+	<strong>我上述评价内容客观  </strong> 
+		<div class="radio">
+			<label>
+				<input type="radio" name="pingjiares" id="pingjiares" value="是">是
+			</label>
+        </div>
+		<div class="radio">
+			<label>
+				<input type="radio" name="pingjiares" id="pingjiares" value="否">否
+			</label>
+        </div>
+	
+	</div>
+</div>
+
+
+
+
+
+
+ 
+<div class="row" id="last_page_next" style="margin-top:10px;display:none">
+<div class="col-sm-4"></div>
+<div class="col-sm-3"><button  id="last_commit_s"  class="btn btn-success ">上一页</button></div>
+<div class="col-sm-5"><button  id="last_commit"  class="btn btn-success ">提交</button> </div>
+</div>
+ 
+
+
+
+ 
+ 
+ 
+   
+ <!--###############  第九页 最后一页#########################-->
+ 
+ 
+ 
+ 
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--########  第一页的 js 在这；没有判断星星##################-->
+<script>
+
+
+<!--######## 所有数据的集合##################-->
+var one_page_star = {};
+
+
+
+<!--######## 第一页星星##################-->
+$('#input_page_one_one').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_one_one"] = value
+});
+
+
+$('#input_page_one_two').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_one_two"] = value
+});
+
+$('#input_page_one_three').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_one_three"] = value
+});
+
+$('#input_page_one_four').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_one_four"] = value
+});
+
+{#$('#input_page_one_five').on('rating.change', function(event, value, caption) {#}
+{#    console.log(value);#}
+{#	one_page_star["input_page_one_five"] = value});#}
+
+
+<!--######## 第二页星星##################-->
+$('#input_page_two_one').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_two_one"] = value
+});
+
+
+$('#input_page_two_two').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_two_two"] = value
+});
+
+$('#input_page_two_three').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_two_three"] = value
+});
+
+$('#input_page_two_four').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_two_four"] = value
+});
+
+{#$('#input_page_two_five').on('rating.change', function(event, value, caption) {#}
+{#    console.log(value);#}
+{#	one_page_star["input_page_two_five"] = value});#}
+
+
+
+
+<!--######## 第三页星星##################-->
+$('#input_page_three_one').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_three_one"] = value
+});
+
+
+$('#input_page_three_two').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_three_two"] = value
+});
+
+$('#input_page_three_three').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_three_three"] = value
+});
+
+$('#input_page_three_four').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_three_four"] = value
+});
+
+$('#input_page_three_five').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_three_five"] = value
+});
+
+
+
+
+
+<!--######## 第四页页星星##################-->
+
+
+
+<!-- 第一个前端工程师 的星星-->
+$('#input_page_four_one_one').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_four_one_one"] = value
+});
+
+
+$('#input_page_four_one_two').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_four_one_two"] = value
+});
+
+$('#input_page_four_one_three').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_four_one_three"] = value
+});
+
+$('#input_page_four_one_four').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_four_one_four"] = value
+});
+
+
+
+<!-- 第二个前端工程师 的星星-->
+$('#input_page_four_two_one').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_four_two_one"] = value
+});
+
+
+$('#input_page_four_two_two').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_four_two_two"] = value
+});
+
+$('#input_page_four_two_three').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_four_two_three"] = value
+});
+
+$('#input_page_four_two_four').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_four_two_four"] = value
+});
+
+<!-- 第三个前端工程师 的星星-->
+$('#input_page_four_three_one').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_four_three_one"] = value
+});
+
+
+$('#input_page_four_three_two').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_four_three_two"] = value
+});
+
+$('#input_page_four_three_three').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_four_three_three"] = value
+});
+
+$('#input_page_four_three_four').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_four_three_four"] = value
+});
+
+<!-- 第四个前端工程师 的星星-->
+$('#input_page_four_four_one').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_four_four_one"] = value
+});
+
+
+$('#input_page_four_four_two').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_four_four_two"] = value
+});
+
+$('#input_page_four_four_three').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_four_four_three"] = value
+});
+
+$('#input_page_four_four_four').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_four_four_four"] = value
+});
+
+
+
+<!--######## 第五页星星##################-->
+$('#input_page_five_one').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_five_one"] = value
+});
+
+
+$('#input_page_five_two').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_five_two"] = value
+});
+
+$('#input_page_five_three').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_five_three"] = value
+});
+
+$('#input_page_five_four').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_five_four"] = value
+});
+
+$('#input_page_five_five').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_five_five"] = value
+});
+
+
+<!--######## 第五页星星##################-->
+
+
+
+
+<!--######## 第六页星星##################-->
+
+<!-- 第一个java工程师 的星星-->
+$('#input_page_six_one_one').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_six_one_one"] = value
+});
+
+
+$('#input_page_six_one_two').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_six_one_two"] = value
+});
+
+$('#input_page_six_one_three').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_six_one_three"] = value
+});
+
+$('#input_page_six_one_four').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_six_one_four"] = value
+});
+
+
+
+<!-- 第二个java工程师 的星星-->
+$('#input_page_six_two_one').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_six_two_one"] = value
+});
+
+
+$('#input_page_six_two_two').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_six_two_two"] = value
+});
+
+$('#input_page_six_two_three').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_six_two_three"] = value
+});
+
+$('#input_page_six_two_four').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_six_two_four"] = value
+});
+
+<!-- 第三个java工程师 的星星-->
+$('#input_page_six_three_one').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_six_three_one"] = value
+});
+
+
+$('#input_page_six_three_two').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_six_three_two"] = value
+});
+
+$('#input_page_six_three_three').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_six_three_three"] = value
+});
+
+$('#input_page_six_three_four').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_six_three_four"] = value
+});
+
+
+
+
+<!--######## 第六页星星##################-->
+
+
+
+
+
+
+
+<!--######## 第七页星星##################-->
+$('#input_page_seven_one').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_seven_one"] = value
+});
+
+
+$('#input_page_seven_two').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_seven_two"] = value
+});
+
+$('#input_page_seven_three').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_seven_three"] = value
+});
+
+$('#input_page_seven_four').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_seven_four"] = value
+});
+
+$('#input_page_seven_five').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_seven_five"] = value
+});
+
+
+<!--######## 第七页星星##################-->
+
+
+
+
+<!--######## 第八页星星##################-->
+
+
+
+<!-- 第一个前端工程师 的星星-->
+$('#input_page_eight_one_one').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_eight_one_one"] = value
+});
+
+
+$('#input_page_eight_one_two').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_eight_one_two"] = value
+});
+
+$('#input_page_eight_one_three').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_eight_one_three"] = value
+});
+
+$('#input_page_eight_one_four').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_eight_one_four"] = value
+});
+
+
+
+<!-- 第二个前端工程师 的星星-->
+$('#input_page_eight_two_one').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_eight_two_one"] = value
+});
+
+
+$('#input_page_eight_two_two').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_eight_two_two"] = value
+});
+
+$('#input_page_eight_two_three').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_eight_two_three"] = value
+});
+
+$('#input_page_eight_two_four').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_eight_two_four"] = value
+});
+
+<!-- 第三个前端工程师 的星星-->
+$('#input_page_eight_three_one').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_eight_three_one"] = value
+});
+
+
+$('#input_page_eight_three_two').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_eight_three_two"] = value
+});
+
+$('#input_page_eight_three_three').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_eight_three_three"] = value
+});
+
+$('#input_page_eight_three_four').on('rating.change', function(event, value, caption) {
+    console.log(value);
+	one_page_star["input_page_eight_three_four"] = value
+});
+
+
+
+
+<!--######## 第八页星星##################-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--######## 第一个星星操作 ###########@@@@@@@@@@@@@@@@@@#######-->
+$("#next_page_one").click(function(){ 
+
+console.log("1111111111111")
+if ($("#page_one_cpjl").val() == ""){
+		console.log("产品经理内容没有填写")
+}
+
+
+one_page_star["page_one_cpjl"] = $("#page_one_cpjl").val()
+one_page_star["one_page_text"] =  $("#one_page_text").val()
+console.log("one_page_star")
+console.log(JSON.stringify(one_page_star))
+
+<!--######## 点击下一页隐藏 第一页先关信息##################-->
+$("#one_page_select").css("display","none");
+$("#one_page_input").css("display","none");
+$("#one_page_start_one").css("display","none");
+
+$("#one_page_word").css("display","none");
+$("#one_page_textarea").css("display","none");
+$("#one_page_next").css("display","none");
+<!--######## 点击下一页  显示第二页信息##################-->
+$("#two_page_select").css("display","block");
+$("#two_page_input").css("display","block");
+$("#two_page_start_one").css("display","block");
+
+$("#two_page_word").css("display","block");
+$("#two_page_textarea").css("display","block");
+$("#two_page_next").css("display","block");
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--######## 第二页星星操作 ##########@@@@@@@@@@@@########-->
+$("#next_page_two").click(function(){ 
+
+console.log("222222222222222 替换 标题")
+
+if ($("#page_two_cpjl").val() == ""){
+		console.log("产品经理内容没有填写")
+}
+
+
+one_page_star["page_two_cpjl"] = $("#page_two_cpjl").val()
+one_page_star["two_page_text"] =  $("#two_page_text").val()
+console.log("one_page_star")
+console.log(JSON.stringify(one_page_star))
+
+$("#zong_biaoti").text('组长/产品线负责人调查页 ');
+<!--######## 隐藏当前第二页 ##################-->
+$("#two_page_input").css("display","none");
+$("#two_page_start_one").css("display","none");
+
+$("#two_page_word").css("display","none");
+$("#two_page_textarea").css("display","none");
+$("#two_page_next").css("display","none");
+
+
+<!--######## 显示第三页 ##################-->
+$("#three_page_input").css("display","block");
+$("#three_page_start_one").css("display","block");
+
+$("#three_page_word").css("display","block");
+$("#three_page_textarea").css("display","block");
+$("#three_page_next").css("display","block");
+
+
+
+})
+
+
+
+
+
+
+
+<!--######## 第三页星星操作 ##########@@@@@@@@@@@@########-->
+
+$("#next_page_three").click(function(){ 
+
+console.log("333333333 下面一页是前端  标题啊改前端工程师调查页")
+if ($("#page_three_cpjl").val() == ""){
+		console.log("第三页产品经理没填写")
+}
+
+
+one_page_star["page_three_cpjl"] = $("#page_three_cpjl").val()
+one_page_star["three_page_text"] =  $("#three_page_text").val()
+console.log("three_page_text")
+console.log(JSON.stringify(one_page_star))
+$("#zong_biaoti").text('前端工程师调查页');
+<!--######## 点击下一页隐藏 当前页信息##################-->
+
+$("#three_page_input").css("display","none");
+$("#three_page_start_one").css("display","none");
+
+$("#three_page_word").css("display","none");
+$("#three_page_textarea").css("display","none");
+$("#three_page_next").css("display","none");
+
+
+<!--显示第四页  -->
+$("#four_page_input_one").css("display","block");
+$("#four_page_start_one").css("display","block");
+$("#four_page_input_two").css("display","block");
+$("#four_page_start_two").css("display","block");
+$("#four_page_input_three").css("display","block");
+$("#four_page_start_three").css("display","block");
+$("#four_page_input_four").css("display","block");
+$("#four_page_start_four").css("display","block");
+$("#four_page_next").css("display","block");
+
+
+
+})
+
+
+
+
+
+
+
+<!--######## 第四页星星操作 #########@@@@@@@@@@@@#########-->
+
+$("#next_page_four").click(function(){ 
+
+
+console.log("44444444前端工程师")
+if ($("#page_four_one_cpjl").val() == ""){
+		console.log("前端1没填")
+}
+if ($("#page_four_two_cpjl").val() == ""){
+		console.log("前端2没填")
+}
+if ($("#page_four_three_cpjl").val() == ""){
+		console.log("前端3没填")
+}
+if ($("#page_four_four_cpjl").val() == ""){
+		console.log("前端4没填")
+}
+
+
+one_page_star["page_four_one_cpjl"] = $("#page_four_one_cpjl").val()
+one_page_star["page_four_two_cpjl"] = $("#page_four_two_cpjl").val()
+one_page_star["page_four_three_cpjl"] = $("#page_four_three_cpjl").val()
+one_page_star["page_four_four_cpjl"] = $("#page_four_four_cpjl").val()
+
+console.log("one_page_star")
+console.log(JSON.stringify(one_page_star))
+$("#zong_biaoti").text('Java组长/产品线负责人调查页');
+
+<!--######## 点击下一页隐藏 第一页先关信息##################-->
+
+$("#four_page_input_one").css("display","none");
+$("#four_page_start_one").css("display","none");
+
+
+$("#four_page_input_two").css("display","none");
+$("#four_page_start_two").css("display","none");
+
+
+
+$("#four_page_input_three").css("display","none");
+$("#four_page_start_three").css("display","none");
+
+
+$("#four_page_input_four").css("display","none");
+$("#four_page_start_four").css("display","none");
+
+
+$("#next_page_four").css("display","none");
+$("#next_page_four_s").css("display","none");
+
+
+<!--######## 第五个页星星操作 ########@@@@@@@@@@@@##########-->
+$("#five_page_input").css("display","block");
+$("#five_page_start_one").css("display","block");
+
+$("#five_page_word").css("display","block");
+$("#five_page_textarea").css("display","block");
+$("#five_page_next").css("display","block");
+
+})
+
+
+
+
+
+
+
+
+<!--######## 第五页星星操作 ##################-->
+
+$("#next_page_five").click(function(){ 
+
+console.log("555555555555555")
+if ($("#page_five_cpjl").val() == ""){
+		console.log("产品经理内容没有填写")
+}
+
+
+one_page_star["page_five_cpjl"] = $("#page_five_cpjl").val()
+one_page_star["five_page_text"] =  $("#five_page_text").val()
+console.log("one_page_star")
+console.log(JSON.stringify(one_page_star))
+$("#zong_biaoti").text('Java工程师调查页');
+
+<!--######## 点击下一页隐藏 第一页先关信息##################-->
+
+$("#five_page_input").css("display","none");
+$("#five_page_start_one").css("display","none");
+
+$("#five_page_word").css("display","none");
+$("#five_page_textarea").css("display","none");
+$("#five_page_next").css("display","none");
+
+
+
+$("#six_page_input_one").css("display","block");
+$("#six_page_start_one").css("display","block");
+
+
+$("#six_page_input_two").css("display","block");
+$("#six_page_start_two").css("display","block");
+
+
+
+$("#six_page_input_three").css("display","block");
+$("#six_page_start_three").css("display","block");
+
+$("#six_page_next").css("display","block");
+
+})
+
+
+
+
+
+
+<!--######## 第六页星星操作 ###########@@@@@@@@@@@@#######-->
+$("#next_page_six").click(function(){ 
+
+console.log("666666java")
+if ($("#page_six_one_cpjl").val() == ""){
+		console.log("java1没填")
+}
+if ($("#page_six_two_cpjl").val() == ""){
+		console.log("java2没填")
+}
+if ($("#page_six_three_cpjl").val() == ""){
+		console.log("java3没填")
+}
+
+
+one_page_star["page_six_one_cpjl"] = $("#page_six_one_cpjl").val()
+one_page_star["page_six_two_cpjl"] = $("#page_six_two_cpjl").val()
+one_page_star["page_six_three_cpjl"] = $("#page_six_three_cpjl").val()
+
+
+console.log("one_page_star")
+console.log(JSON.stringify(one_page_star))
+$("#zong_biaoti").text('测试组组长/产品线负责人');
+
+
+$("#six_page_input_one").css("display","none");
+$("#six_page_start_one").css("display","none");
+
+
+$("#six_page_input_two").css("display","none");
+$("#six_page_start_two").css("display","none");
+
+
+
+$("#six_page_input_three").css("display","none");
+$("#six_page_start_three").css("display","none");
+$("#six_page_next").css("display","none");
+
+
+
+
+
+
+$("#seven_page_input").css("display","block");
+$("#seven_page_start_one").css("display","block");
+
+$("#seven_page_word").css("display","block");
+$("#seven_page_textarea").css("display","block");
+$("#seven_page_next").css("display","block");
+
+
+
+
+})
+
+<!--######## 第六页星星操作 ##################-->
+
+
+
+
+
+
+
+
+
+
+<!--######## 第七页星星操作 ###########@@@@@@@@@@@@#######-->
+$("#next_page_seven").click(function(){ 
+
+console.log("7777777777")
+if ($("#page_seven_cpjl").val() == ""){
+		console.log("测试组组长/产品线负责人 ")
+}
+
+
+one_page_star["page_seven_cpjl"] = $("#page_seven_cpjl").val()
+one_page_star["seven_page_text"] =  $("#seven_page_text").val()
+console.log("one_page_star")
+console.log(JSON.stringify(one_page_star))
+$("#zong_biaoti").text('测试工程师调查');
+
+<!--######## 点击下一页隐藏 第一页先关信息##################-->
+
+$("#seven_page_input").css("display","none");
+$("#seven_page_start_one").css("display","none");
+
+$("#seven_page_word").css("display","none");
+$("#seven_page_textarea").css("display","none");
+$("#seven_page_next").css("display","none");
+
+
+
+
+$("#eight_page_input_one").css("display","block");
+$("#eight_page_start_one").css("display","block");
+
+
+$("#eight_page_input_two").css("display","block");
+$("#eight_page_start_two").css("display","block");
+
+
+
+$("#eight_page_input_three").css("display","block");
+$("#eight_page_start_three").css("display","block");
+$("#eight_page_next").css("display","block");
+
+
+
+})
+
+<!--######## 第七页星星操作 ##################-->
+
+
+
+
+
+<!--######## 第八页星星操作 ##################-->
+$("#next_page_eight").click(function(){ 
+
+console.log("888888888888888")
+if ($("#page_eight_one_cpjl").val() == ""){
+		console.log("测1")
+}
+if ($("#page_eight_two_cpjl").val() == ""){
+		console.log("测试2")
+}
+if ($("#page_eight_three_cpjl").val() == ""){
+		console.log("测试3")
+}
+
+
+one_page_star["page_eight_one_cpjl"] = $("#page_eight_one_cpjl").val()
+one_page_star["page_eight_two_cpjl"] = $("#page_eight_two_cpjl").val()
+one_page_star["page_eight_three_cpjl"] = $("#page_eight_three_cpjl").val()
+
+
+console.log("one_page_star")
+console.log(JSON.stringify(one_page_star))
+$("#zong_biaoti").text('意愿度调查');
+
+
+
+$("#eight_page_input_one").css("display","none");
+$("#eight_page_start_one").css("display","none");
+
+
+$("#eight_page_input_two").css("display","none");
+$("#eight_page_start_two").css("display","none");
+
+
+
+$("#eight_page_input_three").css("display","none");
+$("#eight_page_start_three").css("display","none");
+
+$("#next_page_eight").css("display","none");
+$("#next_page_eight_s").css("display","none");
+
+
+
+
+$("#one_page_text").hide()
+$("#last_page_next").show();
+$("#last_radio_kg").show();
+$("#one_page_textarea").show();
+$("#last_page_word").show();
+$("#last_radio_z").show();
+$("#last_page_input").show();
+$("#reason_ids").show();
+$("#reason_oo").show();
+$("#last_select_wai").show();
+$("#last_radio").show();
+$("#last_page_textarea_dzz").show();
+
+
+
+
+})
+
+<!--######## 第八页星星操作 ##################-->
+
+
+
+
+<!--######## 第九页星星操作 最后一页 ##################-->
+$("#last_commit").click(function(){ 
+	
+	
+    var iwang = $("input[name='optionswant']:checked").val();
+	var last_select = $("#last_select").val();
+	var chage_reasons = $("#chage_reasons").val();
+	var whoiam = $("#whoiam").val();
+	var changelevel = $("input[name='changelevel']:checked").val()
+	var changelevel_reason = $("#changelevel_reason").val()
+	var pingjiares = $("#pingjiares").val()
+	one_page_star["iwang"]=iwang
+	one_page_star["last_select"]=last_select
+	one_page_star["chage_reasons"]=chage_reasons
+	one_page_star["whoiam"]=whoiam
+	one_page_star["changelevel"]=changelevel
+	one_page_star["changelevel_reason"]=changelevel_reason
+	one_page_star["pingjiares"]=pingjiares
+	console.log(iwang,last_select,chage_reasons,whoiam,changelevel,changelevel_reason,pingjiares)
+	console.log("one_page_star")
+        console.log(JSON.stringify(one_page_star))
+        var ss = JSON.stringify(one_page_star)
+        console.log(typeof(ss))
+	
+
+
+                   data = {
+                    'ssss':ss
+                };
+        console.log(data)
+                $.post("http://172.30.0.220:8998/api/", data,
+                        function (data) {
+                            if (data) {
+                                alert(data)
+                                alert("成功回来了")
+                                window.location.href='http://172.30.0.220:8998/res/';
+
+                            } else {
+                                alert(data)
+                                alert("失败回来了");
+
+                                window.location.href='http://172.30.0.220:8998/res/';
+                            }
+                        }, "json");
+
+
+
+	})
+	
+	
+	
+	
+	
+	
+
+	<!--初始化  1 学生家长 2 外教管理 3 班主任 4  课程顾问 5 基础业务 6碎片化增长       -->
+	
+	<!-- select 初始化init 第一页-->
+	function init_select(){
+	
+    var	 options = $('#init_select option').filter(':selected').val()
+	console.log (options)
+	one_page_star["sub_line"] = options
+	console.log(one_page_star)
+	
+	<!--学生家长-->
+	if (options == "学生家长"){
+	$("#page_one_cpjl").attr("value","孙玲玉")
+	$("#page_two_cpjl").attr("value","王家平")
+	}
+	
+	
+	
+     <!--外教管理-->
+	if (options == "外教管理"){
+	$("#page_one_cpjl").attr("value","胡龙萍")
+	$("#page_two_cpjl").attr("value","葛帅")
+	}
+	
+	
+	<!--基础业务-->
+	if (options == "基础业务"){
+	$("#page_one_cpjl").attr("value","王晶晶")
+	$("#page_two_cpjl").attr("value","张翔羽")
+	}
+	
+	
+	
+	<!--碎片化增长-->
+	if (options == "基础业务"){
+	$("#page_one_cpjl").attr("value","杨梦杨")
+	}
+	
+	}
+	
+	
+	
+	
+	
+<!--上一页面操作*************************************************************-->
+
+<!--第二页上一页-->	
+$("#next_page_two_s").click(function(){ 
+console.log("222222222222222上一页")
+
+<!--######## 点击上一页隐藏 第一页显示##################-->
+$("#one_page_select").css("display","block");
+$("#one_page_input").css("display","block");
+$("#one_page_start_one").css("display","block");
+
+$("#one_page_word").css("display","block");
+$("#one_page_textarea").css("display","block");
+$("#one_page_next").css("display","block");
+<!--######## 隐藏第二页##################-->
+$("#two_page_select").css("display","none");
+$("#two_page_input").css("display","none");
+$("#two_page_start_one").css("display","none");
+
+$("#two_page_word").css("display","none");
+$("#two_page_textarea").css("display","none");
+$("#two_page_next").css("display","none");
+
+})
+
+
+
+
+
+<!--第三页上一页-->	
+$("#next_page_three_s").click(function(){ 
+console.log("33333上一页")
+
+
+<!--######## 显示第二页 ##################-->
+$("#zong_biaoti").text('产品经理调查页');
+$("#two_page_input").css("display","block");
+$("#two_page_start_one").css("display","block");
+
+$("#two_page_word").css("display","block");
+$("#two_page_textarea").css("display","block");
+$("#two_page_next").css("display","block");
+
+
+<!--######## 隐藏第三页 ##################-->
+$("#three_page_input").css("display","none");
+$("#three_page_start_one").css("display","none");
+
+$("#three_page_word").css("display","none");
+$("#three_page_textarea").css("display","none");
+$("#three_page_next").css("display","none");
+
+
+})
+
+
+
+
+
+
+<!--第四页上一页-->	
+$("#next_page_four_s").click(function(){ 
+console.log("444444上一页")
+
+
+<!--######## 显示第三页 ##################-->
+$("#zong_biaoti").text('组长/产品线负责人调查页');
+
+<!--######## ##################-->
+
+$("#three_page_input").css("display","block");
+$("#three_page_start_one").css("display","block");
+
+$("#three_page_word").css("display","block");
+$("#three_page_textarea").css("display","block");
+$("#three_page_next").css("display","block");
+
+
+<!--隐藏第四页  -->
+$("#four_page_input_one").css("display","none");
+$("#four_page_start_one").css("display","none");
+$("#four_page_input_two").css("display","none");
+$("#four_page_start_two").css("display","none");
+$("#four_page_input_three").css("display","none");
+$("#four_page_start_three").css("display","none");
+$("#four_page_input_four").css("display","none");
+$("#four_page_start_four").css("display","none");
+$("#four_page_next").css("display","none");
+
+})
+
+
+
+
+
+<!--第五页上一页-->	
+$("#next_page_five_s").click(function(){ 
+console.log("555555上一页")
+
+
+<!--######## 点击下一页隐藏 第一页先关信息##################-->
+$("#zong_biaoti").text('前端工程师调查页');
+
+$("#four_page_input_one").css("display","block");
+$("#four_page_start_one").css("display","block");
+
+
+$("#four_page_input_two").css("display","block");
+$("#four_page_start_two").css("display","block");
+
+
+
+$("#four_page_input_three").css("display","block");
+$("#four_page_start_three").css("display","block");
+
+
+$("#four_page_input_four").css("display","block");
+$("#four_page_start_four").css("display","block");
+
+
+$("#next_page_four").css("display","block");
+$("#next_page_four_s").css("display","block");
+
+
+<!--######## 第五个页星星操作 ########@@@@@@@@@@@@##########-->
+$("#five_page_input").css("display","none");
+$("#five_page_start_one").css("display","none");
+
+$("#five_page_word").css("display","none");
+$("#five_page_textarea").css("display","none");
+$("#five_page_next").css("display","none");
+
+})
+
+
+
+
+<!--第六页上一页-->	
+$("#next_page_six_s").click(function(){ 
+console.log("66666666666上一页")
+
+
+<!--######## 点击下一页隐藏 第一页先关信息##################-->
+$("#zong_biaoti").text('Java组长/产品线负责人调查页');
+
+$("#five_page_input").css("display","block");
+$("#five_page_start_one").css("display","block");
+
+$("#five_page_word").css("display","block");
+$("#five_page_textarea").css("display","block");
+$("#five_page_next").css("display","block");
+
+
+
+$("#six_page_input_one").css("display","none");
+$("#six_page_start_one").css("display","none");
+
+
+$("#six_page_input_two").css("display","none");
+$("#six_page_start_two").css("display","none");
+
+
+
+$("#six_page_input_three").css("display","none");
+$("#six_page_start_three").css("display","none");
+
+$("#six_page_next").css("display","none");
+
+
+})
+
+
+
+
+
+
+
+
+
+<!--第七页上一页-->	
+$("#next_page_seven_s").click(function(){ 
+console.log("7777777上一页")
+
+
+<!--######## 点击下一页隐藏 第一页先关信息##################-->
+$("#zong_biaoti").text('Java工程师调查页');
+
+
+$("#six_page_input_one").css("display","block");
+$("#six_page_start_one").css("display","block");
+
+
+$("#six_page_input_two").css("display","block");
+$("#six_page_start_two").css("display","block");
+
+
+$("#six_page_input_three").css("display","block");
+$("#six_page_start_three").css("display","block");
+$("#six_page_next").css("display","block");
+
+
+
+$("#seven_page_input").css("display","none");
+$("#seven_page_start_one").css("display","none");
+
+$("#seven_page_word").css("display","none");
+$("#seven_page_textarea").css("display","none");
+$("#seven_page_next").css("display","none");
+
+})
+
+
+
+
+<!--第八页上一页-->	
+$("#next_page_eight_s").click(function(){ 
+console.log("88888888上一页")
+
+
+<!--######## 点击下一页隐藏 第一页先关信息##################-->
+$("#zong_biaoti").text('测试组组长/产品线负责人');
+
+$("#seven_page_input").css("display","block");
+$("#seven_page_start_one").css("display","block");
+
+$("#seven_page_word").css("display","block");
+$("#seven_page_textarea").css("display","block");
+$("#seven_page_next").css("display","block");
+
+
+
+
+$("#eight_page_input_one").css("display","none");
+$("#eight_page_start_one").css("display","none");
+
+
+$("#eight_page_input_two").css("display","none");
+$("#eight_page_start_two").css("display","none");
+
+
+
+$("#eight_page_input_three").css("display","none");
+$("#eight_page_start_three").css("display","none");
+$("#eight_page_next").css("display","none");
+
+
+})
+
+
+
+
+
+
+
+
+<!--第九页上一页  最后一页-->	
+$("#last_commit_s").click(function(){ 
+console.log("999999999999上一页")
+
+
+<!--######## 点击下一页隐藏 第一页先关信息##################-->
+
+$("#zong_biaoti").text('测试工程师调查');
+
+
+
+$("#eight_page_input_one").css("display","block");
+$("#eight_page_start_one").css("display","block");
+
+
+$("#eight_page_input_two").css("display","block");
+$("#eight_page_start_two").css("display","block");
+
+
+
+$("#eight_page_input_three").css("display","block");
+$("#eight_page_start_three").css("display","block");
+
+$("#next_page_eight").css("display","block");
+$("#next_page_eight_s").css("display","block");
+
+
+
+
+$("#one_page_text").show()
+$("#last_page_next").hide();
+$("#last_radio_kg").hide();
+$("#one_page_textarea").hide();
+$("#last_page_word").hide();
+$("#last_radio_z").hide();
+$("#last_page_input").hide();
+$("#reason_ids").hide();
+$("#reason_oo").hide();
+$("#last_select_wai").hide();
+$("#last_radio").hide();
+$("#last_page_textarea_dzz").hide();
+
+
+})
+
+</script>
+
+
+
+</html>
+

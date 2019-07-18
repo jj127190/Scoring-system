@@ -1,0 +1,117 @@
+
+    <div class="row">
+    <form class="form-horizontal" action="#" method="POST" id="form">
+
+        <legend>问卷调查</legend>
+           <div class="form-group">
+              <label class="col-sm-2 control-label" for="host_ip">经理：</label>
+              <div class="col-sm-1">
+                <span></span>
+              </div>
+			  <div class="col-sm-1">
+                 <input class="form-control validate[required,custom[ipv4]]"  type="text" value="3分"  readonly="readonly"  placeholder="3分"/>
+              </div>
+           </div>
+
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="host_ip">当前主机ip：</label>
+              <div class="col-sm-3">
+
+                <input class="form-control validate[required,custom[ipv4]]" name="host_ip" id="host_ip" type="text" value="" placeholder="启动以后会默认自动获取ip( • ̀ω•́ )✧"/>
+
+              </div>
+           </div>
+
+
+           <div class="form-group">
+              <label class="col-sm-2 control-label" for="port">启动端口：</label>
+              <div class="col-sm-3">
+
+                      <input class="form-control validate[required]" name="port" id="port" type="text" value="886" placeholder="默认12345端口٩(๑❛ᴗ❛๑)۶" />
+                  <!--placeholder="80"-->
+
+              </div>
+
+            </div>
+
+
+           <!--<div class="form-group">-->
+              <!--<label class="col-sm-2 control-label" for="file_path">dockerfile路径：</label>-->
+              <!--<div class="col-sm-3">-->
+                  <!--{% if file_path %}-->
+                        <!--<input class="form-control validate[required]" name="file_path" id="file_path" type="text" value="{{ file_path }}" placeholder="{{ file_path }}"/>-->
+                    <!--{% else %}-->
+                      <!--<input class="form-control validate[required]" name="file_path" id="file_path" type="text" value="/home/django/dockerfiles/" placeholder="默认路径:/home/django/dockerfiles/"/>-->
+                  <!--{% endif %}-->
+              <!--</div>-->
+
+            <!--</div>-->
+
+             <div class="form-group">
+              <label class="col-sm-2 control-label" for="logpath">日志路径：</label>
+              <div class="col-sm-3">
+
+                      <input class="form-control validate[required]" name="logpath" id="logpath" type="text" value="/home/django/logs/" placeholder="默认路径:/data/logs/" />
+
+              </div>
+
+            </div>
+
+
+           <div class="form-group">
+              <label class="col-sm-2 control-label" for="mysqldb">mysqldb：</label>
+              <div class="col-sm-3">
+
+                      <input class="form-control validate[required]" name="mysqldb" id="mysqldb" type="text" value="blingabc" placeholder="٩(๑>◡<๑)۶ " />
+
+              </div>
+
+            </div>
+           <div class="form-group">
+              <label class="col-sm-2 control-label" for="MysqlIp">mysqlip：</label>
+              <div class="col-sm-3">
+
+                      <input class="form-control validate[required]" name="mysqlip" id="mysqlip" type="text"  value="127.0.0.1" placeholder="默认ip:127.0.0.1"/>
+
+              </div>
+
+            </div>
+           <div class="form-group">
+              <label class="col-sm-2 control-label" for="MysqlPort">mysqlPort：</label>
+              <div class="col-sm-3">
+
+                      <input class="form-control validate[required]" name="mysqlport" id="mysqlport" type="text" value="22809" placeholder="默认端口:3306"/>
+
+              </div>
+
+            </div>
+
+
+        <div class="form-group">
+              <label class="col-sm-2 control-label" for="MysqlUser">mysqlUser：</label>
+              <div class="col-sm-3">
+
+                      <input class="form-control validate[required]" name="MysqlUser" id="MysqlUser" type="text" value="root" placeholder="默认root"/>
+
+              </div>
+
+            </div>
+
+
+           <div class="form-group">
+              <label class="col-sm-2 control-label" for="MysqlPort">mysqlPass：</label>
+              <div class="col-sm-3">
+
+                      <input class="form-control validate[required]" name="mysqlpass" id="mysqlpass" type="password" value="*******" placeholder="\(*//ω//*)/"/>
+
+              </div>
+
+            </div>
+
+
+
+
+
+
+         </form>
+ </div>
